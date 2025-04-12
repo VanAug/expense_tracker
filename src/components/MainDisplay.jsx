@@ -3,7 +3,7 @@ import React from 'react'
 function MainDisplay() {
   return (
     <div className="main-display">
-      <h2>Expense History</h2>
+      <input className='search' placeholder='Search'></input>
 
       <div className="table">
         <div className="table-header">
