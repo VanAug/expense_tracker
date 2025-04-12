@@ -6,10 +6,13 @@ import MainDisplay from './components/MainDisplay'
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <Navbar />
-      <AddExpense />
-      <MainDisplay />
+      
+      <div className="content-wrapper">
+        <AddExpense />
+        <MainDisplay />
+      </div>
     </div>
   )
 }
