@@ -19,6 +19,7 @@ function AddExpense({ onAddExpense }) {
     event.preventDefault()
     const newExpense = {
       ...formData,
+      id: Date.now(),
       amount: parseFloat(formData.amount)
     }
 

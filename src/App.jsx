@@ -11,13 +11,20 @@ function App() {
     setExpenses([...expenses, newExpense])
   }
   
+  const handleDelete = (id) => {
+    setExpenses(expenses.filter(expense => expense.id !== id
+    ))
+  }
   return (
     <div className="app-container">
       <Navbar />
       
       <div className="content-wrapper">
         <AddExpense onAddExpense={handleAddExpense}/>
-        <MainDisplay expenses={expenses} />
+        <MainDisplay 
+          expenses={expenses}
+          onDelete={handleDelete}
+        />
       </div>
     </div>
   )

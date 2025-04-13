@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Search from './Search'
 
-function MainDisplay({ expenses }) {
+function MainDisplay({ expenses, onDelete }) {
   const [search, setSearch] = useState("")
   const [sortByCriteria, setSortByCriteria] = useState("")
 
@@ -11,7 +11,7 @@ function MainDisplay({ expenses }) {
     
     return (
       expense.expenseName.toLowerCase().includes(makeLowerCase) ||
-      expense.description.toLowerCase().includes(makeLowerCase)
+      expense.description.toLowerCase().includes(makeLowerCase) 
     )
   })
 
@@ -62,6 +62,14 @@ function MainDisplay({ expenses }) {
             <span>{expense.category}</span>
             <span>{expense.amount}</span>
             <span>{expense.date}</span>
+            <span>
+              <button
+                onClick={() => onDelete(expense.id)}
+                aria-label='Delete Expense'
+              >
+                Delete
+              </button>
+            </span>
           </div>
         ))}
 
