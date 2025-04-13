@@ -1,7 +1,7 @@
 import React from 'react'
 import Search from './Search'
 
-function MainDisplay() {
+function MainDisplay({ expenses }) {
 
   return (
     <div className="main-display">
@@ -16,22 +16,15 @@ function MainDisplay() {
           <span>Date</span>
         </div>
 
-        {/* Sample row */}
-        <div className="table-row">
-          <span>Groceries</span>
-          <span>Weekly food shopping</span>
-          <span>Food</span>
-          <span>$50</span>
-          <span>2025-04-10</span>
-        </div>
-
-        <div className="table-row">
-          <span>Transport</span>
-          <span>Bus fare</span>
-          <span>Travel</span>
-          <span>$10</span>
-          <span>2025-04-11</span>
-        </div>
+        {expenses.map((expense, index) => (
+          <div className='table-row' key={index}>
+            <span>{expense.expenseName}</span>
+            <span>{expense.description}</span>
+            <span>{expense.category}</span>
+            <span>{expense.amount}</span>
+            <span>{expense.date}</span>
+          </div>
+        ))}
 
       </div>
     </div>
