@@ -1,8 +1,15 @@
 import React from 'react'
 
 function Search() {
+
   return (
-    <div>Search</div>
+    <div>
+      <input 
+      type='text' 
+      className='search' 
+      placeholder='Search'
+      ></input>
+    </div>
   )
 }
 

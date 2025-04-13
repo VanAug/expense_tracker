@@ -1,10 +1,12 @@
 import React from 'react'
+import Search from './Search'
 
 function MainDisplay() {
+
   return (
     <div className="main-display">
-      <input className='search' placeholder='Search'></input>
-
+      <Search />
+      
       <div className="table">
         <div className="table-header">
           <span>Name</span>
@@ -30,6 +32,7 @@ function MainDisplay() {
           <span>$10</span>
           <span>2025-04-11</span>
         </div>
+
       </div>
     </div>
   )
