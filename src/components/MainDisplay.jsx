@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Search from './Search'
 
 function MainDisplay({ expenses }) {
+  const [search, setSearch] = useState("")
+
+  // Make search case insensitive
+  const filteredExpenses = expenses.filter((expense) => {
+    const makeLowerCase = search.toLowerCase();
+    
+    return (
+      expense.expenseName.toLowerCase().includes(makeLowerCase) ||
+      expense.description.toLowerCase().includes(makeLowerCase)
+    )
+  })
 
   return (
     <div className="main-display">
-      <Search />
+      <Search 
+        search={search}
+        onSearch={setSearch}
+      />
       
       <div className="table">
         <div className="table-header">
@@ -16,7 +30,8 @@ function MainDisplay({ expenses }) {
           <span>Date</span>
         </div>
 
-        {expenses.map((expense, index) => (
+        {/* display search results .....just replace the keyword before map(was espenses is now filteredExpenses) */}
+        {filteredExpenses.map((expense, index) => (
           <div className='table-row' key={index}>
             <span>{expense.expenseName}</span>
             <span>{expense.description}</span>

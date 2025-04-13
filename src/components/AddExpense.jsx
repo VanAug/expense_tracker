@@ -9,10 +9,12 @@ function AddExpense({ onAddExpense }) {
     date: ""
   })
 
+  // push new value to the newly created formData as it is being created
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value})
   }
 
+  // submit form and data and refresh form
   const handleSubmit = (event) => {
     event.preventDefault()
     const newExpense = {

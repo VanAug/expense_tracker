@@ -10,6 +10,7 @@ function App() {
   const handleAddExpense = (newExpense) => {
     setExpenses([...expenses, newExpense])
   }
+  
   return (
     <div className="app-container">
       <Navbar />
